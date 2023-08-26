@@ -49,9 +49,6 @@ spec:
             requests:
               memory: "128Mi"
               cpu: "250m"
-            limits:
-              memory: "512Mi"
-              cpu: "500m"
           livenessProbe:
             httpGet:
               path: /api/user/current
