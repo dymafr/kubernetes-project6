@@ -47,7 +47,7 @@ spec:
               value: root
           resources:
             requests:
-              memory: "128Mi"
+              memory: "512Mi"
               cpu: "250m"
           livenessProbe:
             httpGet:

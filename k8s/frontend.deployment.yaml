@@ -30,7 +30,7 @@ spec:
               mountPath: /etc/nginx/conf.d/
           resources:
             requests:
-              memory: "128Mi"
+              memory: "512Mi"
               cpu: "250m"
       volumes:
         - name: nginx-config-volume
