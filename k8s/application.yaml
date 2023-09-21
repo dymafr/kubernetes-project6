@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: vue-auth
-  namespace: argocd
+  namespace: argocdtest
 spec:
   project: default
   source:
