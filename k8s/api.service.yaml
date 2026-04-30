@@ -9,9 +9,28 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 80
   selector:
     app.kubernetes.io/name: api
     app.kubernetes.io/component: server
     app.kubernetes.io/part-of: auth-app
+---
+apiVersion: networking.gke.io/v1
+kind: HealthCheckPolicy
+metadata:
+  name: api-service-healthcheck
+  namespace: default
+  labels:
+    app.kubernetes.io/part-of: auth-app
+spec:
+  default:
+    config:
+      type: HTTP
+      httpHealthCheck:
+        portSpecification: USE_SERVING_PORT
+        requestPath: /api/user/current
+  targetRef:
+    group: ""
+    kind: Service
+    name: api-service
