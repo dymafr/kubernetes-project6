@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: dymafr/projet5-node:dd9fcbd
+          image: dymafr/projet5-node:latest
           ports:
             - containerPort: 80
           env:
